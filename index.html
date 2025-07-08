@@ -1,23 +1,38 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Đếm Ngược Giáng Sinh 2025</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Countdown 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="content">
-        <h1>🎄 Đếm Ngược Giáng Sinh 2025 🎄</h1>
-        <div id="countdown">
-            <div><span id="days">--</span> Ngày</div>
-            <div><span id="hours">--</span> Giờ</div>
-            <div><span id="minutes">--</span> Phút</div>
-            <div><span id="seconds">--</span> Giây</div>
-        </div>
+  <div class="container">
+    <!-- Trạng thái 1: Nhập thời gian -->
+    <div id="input-state">
+      <h2>🕒 Nhập thời gian bạn muốn đếm ngược 🕒</h2>
+      <input type="datetime-local" id="datetime" />
+      <button onclick="startCountdown()">Bắt đầu</button>
     </div>
 
-    <audio id="bellSound" src="bell.mp3" preload="auto"></audio>
-    <script src="script.js"></script>
+    <!-- Trạng thái 2: Đếm ngược -->
+    <div id="countdown-state" class="hidden">
+      <h2>⏳ Còn lại đến thời gian bạn chọn:</h2>
+      <div class="countdown">
+        <div><span id="days">0</span><br>Ngày</div>
+        <div><span id="hours">0</span><br>Giờ</div>
+        <div><span id="minutes">0</span><br>Phút</div>
+        <div><span id="seconds">0</span><br>Giây</div>
+      </div>
+    </div>
+
+    <!-- Trạng thái 3: Chúc mừng -->
+    <div id="done-state" class="hidden">
+      <h2>🎉 Đã đến thời gian bạn đã chọn! 🎉</h2>
+      <p id="done-time"></p>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
